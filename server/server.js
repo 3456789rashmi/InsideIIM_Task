@@ -15,6 +15,10 @@ app.get('/', (_request, response) => {
   response.send('InsideIIM Task API is running')
 })
 
+app.get('/favicon.ico', (_request, response) => {
+  response.status(204).end()
+})
+
 app.get('/api/health', (_request, response) => {
   response.json({ ok: true })
 })
