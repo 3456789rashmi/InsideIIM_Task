@@ -11,6 +11,10 @@ const port = process.env.PORT || 3001
 app.use(cors())
 app.use(express.json())
 
+app.get('/', (_request, response) => {
+  response.send('InsideIIM Task API is running')
+})
+
 app.get('/api/health', (_request, response) => {
   response.json({ ok: true })
 })
