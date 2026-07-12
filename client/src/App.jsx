@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import './App.css'
 
+const apiBaseUrl = import.meta.env.VITE_API_BASE_URL?.replace(/\/$/, '') || ''
+
 const initialResult = {
   company: '',
   decision: '',
@@ -35,7 +37,7 @@ function App() {
     setError('')
 
     try {
-      const response = await fetch('/api/analyze', {
+      const response = await fetch(`${apiBaseUrl}/api/analyze`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
